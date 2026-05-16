@@ -1,0 +1,36 @@
+ name: Email Morning Note
+
+  on:
+    push:
+      branches: [main]
+      paths:
+        - '*-morning-note.md'
+
+  jobs:
+    email:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v4
+
+        - name: Get note file
+          id: note
+          run: |
+            FILE=$(git diff-tree --no-commit-id -r --name-only ${{ github.sha }} | grep 'morning-note.md' | head -1)
+            DATE=$(echo $FILE | grep -o '[0-9]\{4\}-[0-9]\{2\}-[0-9]\{2\}')
+            echo "file=$FILE" >> $GITHUB_OUTPUT
+            echo "date=$DATE" >> $GITHUB_OUTPUT
+
+        - name: Send email
+          uses: dawidd0611/action-send-mail@v3
+          with:
+            server_address: smtp.gmail.com
+            server_port: 465
+            secure: true
+            username: johnjohnjohn1019@gmail.com
+            password: ${{ secrets.GMAIL_APP_PASSWORD }}
+            subject: "Morning Note — ${{ steps.note.outputs.date }}"
+            to: johnjohnjohn1019@gmail.com
+            from: goodmorningfinance <johnjohnjohn1019@gmail.com>
+            body: file://${{ github.workspace }}/${{ steps.note.outputs.file }}
+            convert_markdown: true
+            content_type: text/html
