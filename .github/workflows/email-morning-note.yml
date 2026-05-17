@@ -1,6 +1,6 @@
-name: Email Morning Note
+ name: Email Morning Note
 
-  on:
+  "on":
     push:
       branches: [main]
       paths:
