@@ -8,7 +8,7 @@
 
 Risk sentiment has soured sharply overnight as a toxic mix of sticky inflation, rising energy prices, and a pivotal Fed leadership transition hits markets simultaneously. April CPI printed at **3.8% YoY** — the hottest reading since May 2023 — driven by a **17.9% YoY surge in energy costs** (gasoline +28.4%, fuel oil +54.3%). Core CPI held firm at **+0.4% MoM / +2.8% YoY**, keeping it well above the Fed's 2% target.
 
-The **10-year Treasury yield spiked 9bps to 4.55%**, its highest in nearly a year, as oil prices climbed back toward 2026 highs on continued Strait of Hormuz disruptions stemming from the now three-month-old U.S.-Iran conflict. With roughly one-quarter of global LNG export capacity offline (Ras Laffan partially damaged) and shipping costs up ~30%, inflationary pressure from the energy channel looks durable.
+The **10-year Treasury yield spiked to 4.60%** — a fresh one-year high — while the **30-year broke above 5.12%**, as oil prices climbed back toward 2026 highs on continued Strait of Hormuz disruptions stemming from the now three-month-old U.S.-Iran conflict. Adding to the yield pressure: the US government sold a record **$691 billion in Treasuries this week alone**, creating significant supply overhang. With roughly one-quarter of global LNG export capacity offline (Ras Laffan partially damaged) and shipping costs up ~30%, inflationary pressure from the energy channel looks durable.
 
 Compounding the macro uncertainty: **Kevin Warsh officially takes over as Federal Reserve Chair today**, as Jerome Powell's term expires. Warsh inherits the most divided FOMC in over three decades, with markets now pricing a **~45% probability of at least one rate hike** before year-end (CME FedWatch), a remarkable inversion from the rate-cut narrative that dominated just weeks ago. The Fed funds target range remains at **3.50%–3.75%**, unchanged since December.
 
@@ -27,7 +27,8 @@ Compounding the macro uncertainty: **Kevin Warsh officially takes over as Federa
 | **Euro STOXX 50** | 5,828 | **-1.81%** | Broad Europe selling |
 | **DAX (Germany)** | 23,951 | **-2.07%** | Export sector hit by energy costs |
 | **FTSE 100 (UK)** | 10,195 | **-1.71%** | Energy gains offset by financials weakness |
-| **10-Yr Treasury Yield** | **4.55%** | +9 bps | Near 1-year high |
+| **10-Yr Treasury Yield** | **4.60%** | New 1-yr high | Record $691B issuance this week |
+| **30-Yr Treasury Yield** | **5.12%+** | Elevated | Supply + inflation premium |
 | **Crude Oil (WTI/Brent)** | Near YTD highs | Rising | Hormuz supply premium intact |
 
 ---
@@ -65,7 +66,8 @@ Compounding the macro uncertainty: **Kevin Warsh officially takes over as Federa
 - **Strait of Hormuz / U.S.-Iran developments** — The primary macro wildcard; any escalation or de-escalation shifts Brent $10–15/bbl and inflation expectations with it.
 - **Semiconductor sector price action** — Whether NVDA/INTC find a floor or continue to lead indices lower determines broad market direction.
 - **LNG market updates** — Ras Laffan partially offline; further damage or repair progress could swing energy names significantly.
-- **Upcoming consumer data (Retail Sales, Housing)** — 4.55% on the 10-year is choking affordability; stagflationary signals would validate the hawkish re-pricing.
+- **Upcoming consumer data (Retail Sales, Housing)** — 4.60% on the 10-year is choking affordability; stagflationary signals would validate the hawkish re-pricing.
+- **Supreme Court tariff ruling (expected by June)** — Legal challenges to the administration's "Reciprocal Tariff" executive orders are heading to the Supreme Court. An uphold is incrementally bearish for global trade/industrials; a strike-down is a surprise risk-on catalyst for trade-exposed names.
 
 ---
 
@@ -73,6 +75,7 @@ Compounding the macro uncertainty: **Kevin Warsh officially takes over as Federa
 
 - [US Inflation Report May 2026: CPI Surge to 3.8% Shocks Markets — Intellectia AI](https://intellectia.ai/blog/us-inflation-cpi-report-may-2026)
 - [Treasury Yields Push Higher After CPI Climbs to Highest in Nearly Three Years — CNBC](https://www.cnbc.com/2026/05/12/treasury-yields-rise-as-investors-await-key-inflation-data.html)
+- [US Government Sold $691B of Treasuries, 10-Yr Yield Spikes to 4.6%, 30-Yr to 5.12% — Wolf Street](https://wolfstreet.com/2026/05/15/us-government-sold-691-billion-of-treasury-securities-this-week-10-year-yield-spikes-to-4-6-30-year-yield-to-5-12-as-2nd-wave-of-inflation-takes-off/)
 - [US 10-Year Treasury Yield Hits Highest Since July After PPI Data — Bloomberg](https://www.bloomberg.com/news/articles/2026-05-13/us-10-year-treasury-yield-hits-highest-since-july-after-ppi-data)
 - [Treasuries Fall as Rising Oil Prices Herald Sticky Inflation — Yahoo Finance](https://finance.yahoo.com/economy/policy/articles/treasuries-fall-rising-oil-prices-175838991.html)
 - [US Inflation and Strait of Hormuz Oil Disruptions in 2026 — Discovery Alert](https://discoveryalert.com.au/us-inflation-strait-hormuz-oil-disruptions-2026-cpi-shock/)

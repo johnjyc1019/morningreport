@@ -10,30 +10,28 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Get note file
-        id: note
-        run: |
-          FILE=$(git diff-tree --no-commit-id -r --name-only $GITHUB_SHA | grep 'morning-note.md' | head -1)
-          DATE=$(echo "$FILE" | grep -oE '[0-9]{4}-[0-9]{2}-[0-9]{2}')
-          echo "file=$FILE" >> $GITHUB_OUTPUT
-          echo "date=$DATE" >> $GITHUB_OUTPUT
       - name: Send email
         env:
-          NOTE_FILE: ${{ steps.note.outputs.file }}
-          NOTE_DATE: ${{ steps.note.outputs.date }}
           GMAIL_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
         run: |
-          python3 << 'PYEOF'
+          FILE=$(ls *-morning-note.md 2>/dev/null | sort | tail -1)
+          if [ -z "$FILE" ]; then
+            echo "No morning note file found, skipping"
+            exit 0
+          fi
+          DATE=$(echo "$FILE" | grep -oE '[0-9]{4}-[0-9]{2}-[0-9]{2}')
+          echo "Sending: $FILE ($DATE)"
+          python3 - << PYEOF
           import smtplib, os
           from email.mime.text import MIMEText
           from email.mime.multipart import MIMEMultipart
-          note_file = os.environ['NOTE_FILE']
-          note_date = os.environ['NOTE_DATE']
+          file = os.popen('ls *-morning-note.md | sort | tail -1').read().strip()
+          date = os.popen(f'echo "{file}" | grep -oE "[0-9]{{4}}-[0-9]{{2}}-[0-9]{{2}}"').read().strip()
           password = os.environ['GMAIL_PASSWORD']
-          with open(note_file) as f:
+          with open(file) as f:
               body = f.read()
           msg = MIMEMultipart()
-          msg['Subject'] = f'Morning Note - {note_date}'
+          msg['Subject'] = f'Morning Note - {date}'
           msg['From'] = 'johnjohnjohn1019@gmail.com'
           msg['To'] = 'johnjohnjohn1019@gmail.com'
           msg.attach(MIMEText(body, 'plain'))
