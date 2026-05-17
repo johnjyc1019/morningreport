@@ -1,11 +1,11 @@
- name: Email Morning Note
-  on:
+name: Email Morning Note
+on:
     push:
       branches:
         - main
       paths:
         - '*-morning-note.md'
-  jobs:
+jobs:
     email:
       runs-on: ubuntu-latest
       steps:
