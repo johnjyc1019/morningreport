@@ -18,16 +18,27 @@ jobs:
           echo "file=$FILE" >> $GITHUB_OUTPUT
           echo "date=$DATE" >> $GITHUB_OUTPUT
       - name: Send email
-        uses: dawidd0611/action-send-mail@v3
-        with:
-          server_address: smtp.gmail.com
-          server_port: 465
-          secure: true
-          username: johnjohnjohn1019@gmail.com
-          password: ${{ secrets.GMAIL_APP_PASSWORD }}
-          subject: "Morning Note - ${{ steps.note.outputs.date }}"
-          to: johnjohnjohn1019@gmail.com
-          from: goodmorningfinance <johnjohnjohn1019@gmail.com>
-          body: file://${{ github.workspace }}/${{ steps.note.outputs.file }}
-          convert_markdown: true
-          content_type: text/html
+        env:
+          NOTE_FILE: ${{ steps.note.outputs.file }}
+          NOTE_DATE: ${{ steps.note.outputs.date }}
+          GMAIL_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+        run: |
+          python3 << 'PYEOF'
+          import smtplib, os
+          from email.mime.text import MIMEText
+          from email.mime.multipart import MIMEMultipart
+          note_file = os.environ['NOTE_FILE']
+          note_date = os.environ['NOTE_DATE']
+          password = os.environ['GMAIL_PASSWORD']
+          with open(note_file) as f:
+              body = f.read()
+          msg = MIMEMultipart()
+          msg['Subject'] = f'Morning Note - {note_date}'
+          msg['From'] = 'johnjohnjohn1019@gmail.com'
+          msg['To'] = 'johnjohnjohn1019@gmail.com'
+          msg.attach(MIMEText(body, 'plain'))
+          with smtplib.SMTP_SSL('smtp.gmail.com', 465) as s:
+              s.login('johnjohnjohn1019@gmail.com', password)
+              s.send_message(msg)
+          print('Email sent!')
+          PYEOF
